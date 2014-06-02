@@ -1,0 +1,4 @@
+<module rename-to='CruxBootstrap'>
+	<inherits name='org.cruxframework.crux.core.Crux' />
+	<entry-point class='org.cruxframework.crux.plugin.bootstrap.client.ModuleLoader' />
+</module>
