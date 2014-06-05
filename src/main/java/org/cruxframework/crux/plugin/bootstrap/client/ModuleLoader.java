@@ -56,10 +56,10 @@ public class ModuleLoader implements EntryPoint
 				String bootstrapSelectCSS = resources.bootstrapSelectCSS().getText();
 				String bootstrapThemeCSS = resources.themeCss().getText();
 				
-				StyleInjector.injectStylesheet(bootstrapCSS);
-				StyleInjector.injectStylesheet(bootstrapThemeCSS);
-				StyleInjector.injectStylesheet(bootstrapSelectCSS);
-				StyleInjector.injectStylesheet(bootstrapModalCSS);
+				StyleInjector.injectStylesheetAtEnd(bootstrapCSS);
+				StyleInjector.injectStylesheetAtEnd(bootstrapThemeCSS);
+				StyleInjector.injectStylesheetAtEnd(bootstrapSelectCSS);
+				StyleInjector.injectStylesheetAtEnd(bootstrapModalCSS);
 				
 				//JavaScript
 				String bootstrapJS = resources.bootstrapJS().getText();
@@ -112,10 +112,10 @@ public class ModuleLoader implements EntryPoint
 				String bootstrapSelectCSS = res.bootstrapSelectCSS().getText();
 				String bs2Css = res.css().getText();
 						
-				StyleInjector.injectStylesheet(bs2Css);
-				StyleInjector.injectStylesheet(bs2Responsive);
-				StyleInjector.injectStylesheet(bootstrapSelectCSS);
-				StyleInjector.injectStylesheet(bootstrapModalCSS);
+				StyleInjector.injectStylesheetAtEnd(bs2Css);
+				StyleInjector.injectStylesheetAtEnd(bs2Responsive);
+				StyleInjector.injectStylesheetAtEnd(bootstrapSelectCSS);
+				StyleInjector.injectStylesheetAtEnd(bootstrapModalCSS);
 				
 				return false;
 			}

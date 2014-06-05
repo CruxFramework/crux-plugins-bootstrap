@@ -27,7 +27,7 @@ import com.google.gwt.resources.client.TextResource;
 
 /**
  * @author wesley.diniz
- *
+ * This class is responsible to wrap all required bootstrap's 2.3.2 resources
  */
 @Resource("CruxBootstrap2Resources")
 public interface CruxBootstrap2Resources extends ClientBundle
