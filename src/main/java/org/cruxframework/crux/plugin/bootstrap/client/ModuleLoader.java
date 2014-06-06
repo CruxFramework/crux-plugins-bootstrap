@@ -55,11 +55,13 @@ public class ModuleLoader implements EntryPoint
 				String bootstrapModalCSS = resources.bootstrapModalCSS().getText();
 				String bootstrapSelectCSS = resources.bootstrapSelectCSS().getText();
 				String bootstrapThemeCSS = resources.themeCss().getText();
+				String docsCSS = resources.docs().getText();
 				
-				StyleInjector.injectStylesheetAtEnd(bootstrapCSS);
-				StyleInjector.injectStylesheetAtEnd(bootstrapThemeCSS);
-				StyleInjector.injectStylesheetAtEnd(bootstrapSelectCSS);
-				StyleInjector.injectStylesheetAtEnd(bootstrapModalCSS);
+				StyleInjector.injectStylesheetAtStart(bootstrapCSS);
+				StyleInjector.injectStylesheetAtStart(bootstrapThemeCSS);
+				StyleInjector.injectStylesheetAtStart(bootstrapSelectCSS);
+				StyleInjector.injectStylesheetAtStart(bootstrapModalCSS);
+				StyleInjector.injectStylesheetAtStart(docsCSS);
 				
 				//JavaScript
 				String bootstrapJS = resources.bootstrapJS().getText();
@@ -75,6 +77,8 @@ public class ModuleLoader implements EntryPoint
 				ScriptInjector.fromString(modalJS).setWindow(ScriptInjector.TOP_WINDOW).inject();
 				ScriptInjector.fromString(selectJS).setWindow(ScriptInjector.TOP_WINDOW).inject();
 				ScriptInjector.fromString(html5shiv).setWindow(ScriptInjector.TOP_WINDOW).inject();
+				
+				resources.font().ensureInjected();
 				
 				return false;
 			}

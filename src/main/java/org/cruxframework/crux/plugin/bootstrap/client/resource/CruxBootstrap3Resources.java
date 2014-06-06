@@ -16,13 +16,15 @@
 package org.cruxframework.crux.plugin.bootstrap.client.resource;
 
 import org.cruxframework.crux.core.client.resources.Resource;
+import org.cruxframework.crux.plugin.bootstrap.client.font.FontName;
+import org.cruxframework.crux.plugin.bootstrap.client.font.FontResource;
 import org.cruxframework.crux.plugin.bootstrap.client.resource.css.v3.CssBootstrapCommon;
+import org.cruxframework.crux.plugin.bootstrap.client.resource.css.v3.CssBootstrapDocs;
 import org.cruxframework.crux.plugin.bootstrap.client.resource.css.v3.CssBootstrapModal;
 import org.cruxframework.crux.plugin.bootstrap.client.resource.css.v3.CssBootstrapSelect;
 import org.cruxframework.crux.plugin.bootstrap.client.resource.css.v3.CssThemeBootstrap;
 
 import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.DataResource;
 import com.google.gwt.resources.client.TextResource;
 
 /**
@@ -62,16 +64,14 @@ public interface CruxBootstrap3Resources extends ClientBundle
 	@Source("js/bootstrap-select.min.js")
 	TextResource bootstrapSelect();
 	
-	@Source("img/v3/glyphicons-halflings-regular.eot")
-	DataResource glyphIconsHalflingsRegularEOT();
+	@Source({"img/v3/glyphicons-halflings-regular.svg","img/v3/glyphicons-halflings-regular.eot",
+			"img/v3/glyphicons-halflings-regular.ttf","img/v3/glyphicons-halflings-regular.woff"})
+	@FontName("Glyphicons Halflings")
+	FontResource font();
 	
-	@Source("img/v3/glyphicons-halflings-regular.svg")
-	DataResource glyphIconsHalflingsRegularSVG();
+	@Source("css/v3/bootstrap-docs.css")
+	CssBootstrapDocs docs();
 	
-	@Source("img/v3/glyphicons-halflings-regular.ttf")
-	DataResource glyphIconsHalflingsRegularTTF();
 	
-	@Source("img/v3/glyphicons-halflings-regular.woff")
-	DataResource glyphIconsHalflingsRegularWOFF();
 	
 }
